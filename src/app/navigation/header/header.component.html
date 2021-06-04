@@ -7,10 +7,26 @@
   <div><a routerLink="/">LOGO</a></div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-      <li><a *ngFor="let link of links" routerLink="{{link.path}}">
-        {{link.title}}
-      </a></li>
-      <li><a>Log Out</a></li>
+      <li *ngIf="!isAuth">
+        <a routerLink="/signup">
+          Sign Up
+        </a>
+      </li>
+      <li *ngIf="!isAuth">
+        <a routerLink="/login">
+          Login
+        </a>
+      </li>
+      <li *ngIf="isAuth">
+        <a routerLink="/training">
+          Training
+        </a>
+      </li>
+      <li *ngIf="isAuth">
+        <a>
+          Log Out
+        </a>
+      </li>
     </ul>
   </div>
 </mat-toolbar>
