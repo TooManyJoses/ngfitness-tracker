@@ -23,6 +23,8 @@ export class TrainingComponent implements OnInit {
         }
       }
     )
+    this.trainingService.fetchAvailableExercises();
+    this.trainingService.fetchCompletedOrCancelledWorkouts();
   }
 
 }
